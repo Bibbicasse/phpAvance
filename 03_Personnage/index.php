@@ -1,13 +1,8 @@
 <?php 
-    require('class/Humain.php');
-    require('class/Professionnel.php');
-    require('class/Vehicule.php');
-    require('class/Personnage.php');
-    require('inc/functions.php');
+    require('class/Autoloader.php');
+    Autoloader::register();
 
-    $moi = new Professionnel("Giovinetti","Salvatore","13/01/1996", "Développeur");
-    $salutation = $moi->sePresenter();
-    $renault = new Vehicule("4", "250km\s", "Renault", "beaucoup");
+    // $moi = new Professionnel("Giovinetti","Salvatore","13/01/1996", "Développeur");
     $perso1 = new Personnage("Nono", "100", "10");
     $perso2 = new Personnage("Nana", "100", "20");
 ?> 
@@ -18,30 +13,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>POO - PHP Orienté Objet</title>
 </head>
 <body>
-    <div class="container">
-        <?php jevardump($moi); ?>
-        <?php var_dump($moi->nom) ?>
-        <?php var_dump($moi->prenom) ?>
-        <?php var_dump($moi->dateNaissance) ?> 
-
-        <?php echo ($moi->sePresenter()); ?>
-
-        <!-- Ces deux passages php revoient la même info -->
-        <?php echo(Professionnel::direBonjour()) ?>
-        <?php echo($moi->direBonjour()) ?>
-        <?php echo($salutation); ?> 
-        <?php echo ($renault->maVoiture())?> 
-
-    </div>
 
  <?php 
     $tour = 0;
-    // jevardump($perso2->pointsDeVie);
+    // var_dump($perso2->pointsDeVie);
     while($perso2->pointsDeVie > 0 && $perso1->pointsDeVie > 0) {
         $tour++;
             echo "<strong>Tour numéro $tour <br></strong>";
