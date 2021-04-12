@@ -1,16 +1,13 @@
 <?php 
     require('class/Autoloader.php');
     Autoloader::register();
-    $baseDeDonnes = new MyPDO("mysql:host=localhost;dbname=entreprise;charset=utf8",'root', '');
-    $data = $baseDeDonnes->requeteSelect("employes");
-    // $data = $baseDeDonnes->requeteUpdate("employes");
-    // $data3 = $baseDeDonnes->requeteInsert("INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES(prenom, nom, sexe, service, date_embauche, salaire)");
+    $monPDO = new MyPDO("mysql:host=localhost;dbname=bibliotheque;charset=utf8",'root', '');
+    $data = $monPDO->requeteSelect("livre");
 
-    
-    // Debug::monDebug($data3);
-    // Debug::afficherTableau($baseDeDonnes);
-    // Debug::afficherPropriete($baseDeDonnes);
-    // Debug::monDebugStop($baseDeDonnes); 
+    // Debug::monDebug($data);
+    // Debug::afficherTableau($monPDO);
+    // Debug::afficherPropriete($monPDO);
+    // Debug::monDebugStop($monPDO); 
   
 ?> 
 
@@ -33,124 +30,49 @@
                 echo "<table class=\"table table-sm table-success table-striped\">";
                     echo "<thead>";
                         echo "<tr>";
-                        echo "<th>Nom, prénom</th>";
-                        echo "<th>ID</th>";
-                        echo "<th>Service</th>";
-                        echo "<th>Date d'entrée</th>";
-                        echo "<th>Salaire mensuel</th>";
-                        echo "<th>Fiche</th>";
+                            echo "<th>ID</th>";
+                            echo "<th>Auteur</th>";
+                            echo "<th>Titre</th>";
+                            echo "<th>Voir sa fiche<th>";
                         echo "</tr>";
                     echo "</thead>";
                 foreach ( $data as $infos ) { 
                         echo "<tr>";
-                            echo "<td>";
-                                if ( $infos['sexe'] == 'f') {
-                                    echo "<span class=\"badge badge-secondary\">Mme ";
-                                } else { echo "<span class=\"badge badge-primary\">M. "; } 
-                            echo $infos['nom']. " " .$infos['prenom']. "</span></td>";
-                            echo "<td>#" .$infos['id_employes']." </td>";
-                            echo "<td>" .$infos['service']. " </td>";
-            
-                            setlocale(LC_ALL, 'fr_FR.UTF8', 'fr_FR');
-                            $dateBDD = $infos['date_embauche'];
-                            echo "<td>" . strftime('%d %B %Y', strtotime($dateBDD)). " </td>";
-            
-                            echo "<td>" .number_format($infos['salaire'],2,".",","). "€</td>";
-            
-                            echo "<td><a href=\"index.php?id_employes=".$infos['id_employes']."\"> Voir sa fiche</a><td>";
-                            // echo "<td><a href=\"01_dialogue.php\"> Voir sa fiche</a><td>";
-                        echo "</tr>";
+                            echo "<td>" .$infos['id_livre']."</td>";
+                            echo "<td>" .$infos['Auteur']."</td>";
+                            echo "<td>" .$infos['Titre']."</td>";
+                            echo "<td><a href=\"fiche_livre.php?id_livre=".$infos['id_livre']."\"> Voir sa fiche</a><td>";
                         }
                 echo "</table>";
             ?> 
         </div>
         <div>
-            <h2>MyPDO avec un UPDATE</h2>
-                <form action="" method="POST" class="border border-success border-5 m-2 px-2 py-2" >
-                    <div class="mb-3 form-group">
-                        <!-- <label for="prenom" class="form-label">Prenom</label> -->
-                        <input type="text" name="prenom" id="prenom" class="form-control form-group border border-success" placeholder="Votre prenom" value="<?php echo $data2['prenom']??''; ?>" >
-                    </div>
-                    <div class="mb-3 form-group">
-                        <input type="text" name="nom" id="nom" class="form-control form-group border border-success" placeholder="Votre nom" value="<?php echo $data2['nom']?? '' ; ?>" >
-                    </div>
-                    <div class="mb-3 form-group ">
-                        <!-- <label for="sexe" class="form-label">Sexe</label> <br> -->
-            
-                                        <!-- VERSION SELECT -->
-                        <select class="form-select border border-success btn btn-outline-white" aria-label="Default select example" name="sexe" > 
-                            <option value="f">Femme</option>
-                            <option value="m">Homme</option>
-                            
-                        </select>
-                    </div>
-                    <div class="mb-3 form-group">
-                        <!-- <label for="service" class="form-label">Services</label> <br> -->
-                        <select class="form-select border border-success btn btn-outline-white" aria-label="Default select example" name="service" >
-                            <option value="assistant" >Assistant</option>
-                            <option value="commercial">Commercial</option>
-                            <option value="communication" >Communication</option>
-                            <option value="direction" >Direction</option>
-                            <option value="informatique" >Informatique</option>
-                            <option value="juridique" >Juridique</option>
-                            <option value="production" >Production</option>
-                            <option value="secretariat" >Secretariat</option>
-                        </select>
-                    </div>
-                    <div class="mb-3 form-group">
-                        <!-- <label for="date_embauche" class="form-label">date_embauche</label> -->
-                        <input type="date" name="date_embauche" id="date_embauche" class="form-control form-group border border-success" value="<?php echo $data2['date_embauche']; ?>" >
-                    </div>
-                    <div class="mb-3 form-group">
-                        <!-- <label for="salaire" class="form-label">Salaire</label> -->
-                        <input type="number" name="salaire" id="salaire" class="form-control form-group border border-success" value="<?php echo $data2['salaire']; ?>">
-                    </div>
-                        <input type="submit" href="#" class="submit btn btn-outline-success d-sm-block my-2 col-sm-6 mx-auto" value="Modifier" >
-                </form>
+            <h2>MyPDO avec un Update</h2>
+            <p>Code Executé <code>$requeteUpdate = $monPDO->requeteUpdate('livre',['auteur' => 'Jean-Mi'], 'id_livre', 100);</code></p>
+            <?php 
+                $requeteUpdate = $monPDO->requeteUpdate('livre',['auteur' => 'Jean-Mi'], 'id_livre', 100);
+            ?> 
         </div>
-        <div>
-            <h2>MyPDO avec un INSERT</h2>
-            <form action="02_employes.php" method="POST" class="border border-success border-5 m-2 px-2 py-2" >
-            <div class="mb-3 form-group">
-                <!-- <label for="prenom" class="form-label">Prenom</label> -->
-                <input type="text" name="prenom" id="prenom" class="form-control form-group border border-success" placeholder="Votre prenom" >
-            </div>
-            <div class="mb-3 form-group">
-                <!-- <label for="nom" class="form-label">Nom</label> -->
-                <input type="text" name="nom" id="nom" class="form-control form-group border border-success" placeholder="Votre nom" >
-            </div>
-            <div class="mb-3 form-group ">
-                <!-- <label for="sexe" class="form-label">Sexe</label> <br> -->
-                <select class="form-select border border-success btn btn-outline-white" aria-label="Default select example" name="sexe" >
-                    <option value="f">Femme</option>
-                    <option value="m">Homme</option>
-                </select>
-            </div>
-            <div class="mb-3 form-group">
-                <!-- <label for="service" class="form-label">Services</label> <br> -->
-                <select class="form-select border border-success btn btn-outline-white" aria-label="Default select example" name="service" >
-                    <option value="assistant">Assistant</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="communication">Communication</option>
-                    <option value="direction">Direction</option>
-                    <option value="informatique">Informatique</option>
-                    <option value="juridique">Juridique</option>
-                    <option value="production">Production</option>
-                    <option value="secretariat">Secretariat</option>
-                </select>
-            </div>
-            <div class="mb-3 form-group">
-                <!-- <label for="date_embauche" class="form-label">date_embauche</label> -->
-                <input type="date" name="date_embauche" id="date_embauche" class="form-control form-group border border-success" >
-            </div>
-            <div class="mb-3 form-group">
-                <!-- <label for="salaire" class="form-label">Salaire</label> -->
-                <input type="number" name="salaire" id="salaire" class="form-control form-group border border-success" placeholder="Salaire souhaité" >
-            </div>
-                <input type="submit" href="#" class="submit btn btn-outline-success d-sm-block my-2 col-sm-6 mx-auto" value="M'inscrire">
-        </form>
 
+        <div>
+            <h2>MyPDO avec un  Insert</h2>
+            <p>Code Executé <code>$monPDO->requeteInsert('livre', ['auteur' => "Voldemort", 'titre' => 'Avada Kedavra']);</code></p>
+            <?php 
+                // $requeteInsert = $monPDO->requeteInsert('livre', ['auteur' => "Voldemort", 'titre' => 'Avada Kedavra']);
+            ?> 
         </div>
+
+        <div>
+            <h2>MyPDO avec un  Delete</h2>
+            <p>Code Executé <code>$requeteDelete = $monPDO->requeteDelete('livre','id_livre', 114 );</code></p>
+            <?php 
+                $requeteDelete = $monPDO->requeteDelete('livre','id_livre', 114 );
+                // $requeteDelete = $monPDO->requeteDelete('livre','auteur', 'Voldemort' );//Pour supprimer depuis un champs string
+            ?> 
+        </div>
+                    
+        
+        
     </div>
 
 
