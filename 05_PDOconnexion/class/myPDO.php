@@ -11,7 +11,7 @@ class myPDO{
     public $table;
 
                  /* ***********************************************/
-                 /* CONNEXION A LA BASE */
+                 /*             CONNEXION A LA BASE               */
                  /* ***********************************************/
     public function __construct($host, $user, $password){
         $this->monPDO = new PDO($host, $user, $password);
@@ -111,12 +111,13 @@ class myPDO{
     {
         $requete = "DELETE FROM `$table` WHERE `$table`.`$id_field` = $id";
 
-        $res = $this->baseDeDonnes->prepare($requete);
+        $res = $this->monPDO->prepare($requete);
         return $res->execute();
     }
 
+                 ///////////////////////////////////////////////
                 //MÊME METHODE MAIS DEPUIS UN CHAMPS EN STRING//
-                
+               
     // public function requeteDelete($table, $auteur_field, $auteur)
     // {
     //     $requete = "DELETE FROM `$table` WHERE `$table`.`$auteur_field` = '$auteur'";
