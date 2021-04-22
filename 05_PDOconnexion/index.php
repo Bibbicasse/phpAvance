@@ -3,6 +3,7 @@
     Autoloader::register();
     $monPDO = new MyPDO("mysql:host=localhost;dbname=bibliotheque;charset=utf8",'root', '');
     $data = $monPDO->requeteSelect("livre");
+    use Outils\Debug;
 
     // Debug::monDebug($data);
     // Debug::afficherTableau($monPDO);

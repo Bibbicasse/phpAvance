@@ -1,10 +1,12 @@
 <?php 
     require('class/Autoloader.php');
     Autoloader::register();
+    use Outils\Debug;
 
     // $moi = new Professionnel("Giovinetti","Salvatore","13/01/1996", "Développeur");
     $perso1 = new Personnage("Nono", "100", "10");
     $perso2 = new Personnage("Nana", "100", "20");
+
 ?> 
 
 <!DOCTYPE html>

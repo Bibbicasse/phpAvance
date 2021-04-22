@@ -5,6 +5,8 @@
     $moi = new Professionnel("Giovinetti","Salvatore","13/01/1996", "Développeur");
     $salutation = $moi->sePresenter();
     $renault = new Vehicule("4", "250km\s", "Renault", "beaucoup");
+
+    use Outils\Debug;
 ?> 
 
 <!DOCTYPE html>

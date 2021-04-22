@@ -1,7 +1,7 @@
 <?php 
     require('class/Autoloader.php');
     Autoloader::register();
-
+    use Outils\Debug;
         //initialisation des variables
     $chat_1 = new Chat("Nana", 2, "noir", "femelle", "caniche");
     $chat_2 = new Chat("Nono", 5, "blanc", "male", "race2");

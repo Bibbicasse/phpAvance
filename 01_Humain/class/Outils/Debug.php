@@ -1,4 +1,5 @@
 <?php 
+namespace Outils;
 /** *
  * @author Bibbicasse
  * @version Debug 1.0.0
@@ -34,7 +35,7 @@ class Debug {
      */
 
     static function monDebugStop($debugStop) {
-            echo "<small class=\"bg-success text-white p-2\">
+        echo "<small class=\"bg-success text-white p-2\">
             Débug Stop :</small><pre class=\"alert alert-success w-75\">";
             var_dump($debugStop);
             echo "</pre>";

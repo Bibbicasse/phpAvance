@@ -1,6 +1,6 @@
 <?php 
     require 'ParisBrest.php';
-    $pb1 = new ParisBrest();
+    // $pb1 = new ParisBrest();
   
 ?> 
 
