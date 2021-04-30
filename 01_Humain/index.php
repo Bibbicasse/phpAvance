@@ -4,7 +4,7 @@
     $moi = new Professionnel("Giovinetti","Salvatore","13/01/1996", "Développeur");
     $salutation = $moi->sePresenter();
 
-    use Outils\Debug;
+    // use Outils\Debug;
 ?> 
 
 <!DOCTYPE html>

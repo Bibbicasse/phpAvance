@@ -1,0 +1,10 @@
+Une class PHP : Un model, une boite dans laquelle ou l'on met des propriétés et méthodes afin de mieu organisé et simplifier le code.
+
+L'héritage : permet d'hérité des propriétés et méthode parents tout en ayant ses propres méthode et proprétés/
+
+Le constructor : 
+
+Instancié : c'est une notion
+
+
+
