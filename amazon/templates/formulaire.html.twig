@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}Formulaire{% endblock %}
+
+{% block body %}
+    <h1>Formulaire simple</h1>
+    <form action="{{ path('formulaire_traitement') }}" method="POST">
+        <input type="text" maxlength="255" name="titre" placeholder="Votre Titre">
+        <input type="text" maxlength="1048" name="description" placeholder="Votre Description">
+        <input type="number" name="stock" placeholder="Stock">
+        <input type="datetime-local" name="date_publication" placeholder="Date de publication">
+        <input type="number" step="0.01" name="prix" placeholder="Prix">
+        <input type="submit">
+    </form>
+
+{% endblock %}
