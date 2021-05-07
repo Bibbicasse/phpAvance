@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %}Atelier{% endblock %}
+
+{% block footer %}
+    <footer action="{{ path('atelier_afficher')}}">
+        <img src=" {{ asset ('../public/maquette/pied1.png')}}" alt="pied de page n1">
+        <img src=" {{ asset ('../public/maquette/pied2.png')}}" alt="pied de page n2">
+    </footer>
+{% endblock %}

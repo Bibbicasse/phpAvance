@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %}Atelier{% endblock %}
+
+{% block body %}
+    
+    <p id="newsletter" action="{{ path('atelier_afficher')}}">
+        <img src=" {{ asset ('../public/maquette/entete1.png')}}" alt="En-tête de page">
+    </p>
+{% endblock %}
