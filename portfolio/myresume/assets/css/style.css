@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* H2 title first top */
 #h2accueil {
-  font-size: 5em;
+  font-size: 500%;
 }
 
 #h2resume {
@@ -357,6 +357,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 5em;
   text-align: left;
 }
+
+/* TEXT AREA CSS */
+.shadow-textarea textarea.form-control::placeholder {
+  font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+  padding-left: 0.8rem;
+}
+
+/* VALIDE BUTTON */
+
+
 
 /* Media Queries - RESPONSIVES */
 
@@ -376,7 +388,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #h2accueil {
-    font-size: 5em;
+    font-size: 250%;
+    margin-top: 10%;
   }
 
   #h2resume {
@@ -1272,6 +1285,7 @@ section {
 
 #colorSkills {
   width: 150%;
+  height: 100%;
 }
 #ageCheck {
   width: 40%;

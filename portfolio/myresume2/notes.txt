@@ -1,0 +1,180 @@
+la page de modification
+ <?php
+// connexion à la BASE
+
+if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password']) && ($_POST['email']) && !empty($_POST['email'])) {
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+
+ // connexion à la base de données
+ $db_username = 'root';
+ $db_password = '';
+ $db_name     = 'portfolio';
+ $db_host     = 'localhost';
+
+ if ($db = mysqli_connect($db_host, $db_username, $db_password, $db_name)) {
+        $resultat = $db->prepare( 
+            "INSERT INTO user (username, email, password) 
+            VALUES(:username, :email, :password" );
+       
+        $resultat->execute( array(
+            ':username' => $_POST['username'], 
+            ':password' => $_POST['password'],
+            ':email' => $_POST['email'],
+        ));
+    } else {
+        header('Location: inscription.php?Erreur de base de donnée');
+     }
+    if (!empty($_POST)) {
+    //pour se prémunir des failles nous faisons ceci
+    $_POST['username'] = htmlspecialchars($_POST['username']); 
+    $_POST['password'] = htmlspecialchars($_POST['password']);
+    $_POST['email'] = htmlspecialchars($_POST['email']);
+} var_dump($resu);
+
+// $pdoENT = new PDO('mysql:host=localhost;dbname=portfolio', 
+// 'root', /* nom utilisateur */ 
+// '',//mdp
+// array(
+//     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, //erreur SQL navigateur
+//     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', //charset des échange BDD
+//     )
+// ); 
+
+// if (!empty($_POST)) {
+//     //pour se prémunir des failles nous faisons ceci
+//     $_POST['username'] = htmlspecialchars($_POST['username']); 
+//     $_POST['password'] = htmlspecialchars($_POST['password']);
+//     $_POST['email'] = htmlspecialchars($_POST['email']);
+
+
+//     $resultat = $pdoENT->prepare( 
+//         "INSERT INTO user (username, email, password) 
+//         VALUES(:username, :email, :password" );
+    
+//     $resultat->execute( array(
+//         ':username' => $_POST['username'], 
+//         ':password' => $_POST['password'],
+//         ':email' => $_POST['email'],
+//     ));
+// }
+
+ } 
+ ?>
+
+
+
+
+ /////
+
+ CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(100) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `usersX` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID unique',
+  `username` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `nom` char(30) NOT NULL COMMENT 'Nom de famille',
+  `prenom` char(30) NOT NULL COMMENT 'Prénom',
+  `telephone` char(10) NOT NULL COMMENT 'Numéro de téléphone',
+  `adresse` char(100) NOT NULL COMMENT 'Numéro et rue',
+  `complement` char(50) NOT NULL COMMENT 'Complément d''adresse',
+  `code_postal` char(5) NOT NULL COMMENT 'Code postal',
+  `email` char(50) DEFAULT NULL COMMENT 'Email',
+  `education` char(50) DEFAULT NULL COMMENT 'Niveau d''étude',
+  `age` double DEFAULT NULL COMMENT 'Age de la personne',
+  `disponibilite` enum('oui','non') NOT NULL COMMENT 'Disponibilité de travail',
+  `metier` char(50) NOT NULL COMMENT 'Métier de la personne',
+  `twitter` char(150) NOT NULL COMMENT 'lien du social',
+  `facebook` char(150) NOT NULL,
+  `instagram` char(150) NOT NULL,
+  `github` char(150) NOT NULL,
+  `linkedin` char(150) NOT NULL,
+  `description_portfolio` text COMMENT 'Description page Portfolio',
+  `description_cv` text NOT NULL COMMENT 'Description pour la page CV',
+  `accroche_footer` text COMMENT 'Description dans le footer',
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8
+
+/////
+
+if (!empty($_Post)) {
+     //pour se prémunir des failles nous faisons ceci
+    //  $_POST['prenom'] = htmlspecialchars($_POST['prenom']); 
+    //  $_POST['nom'] = htmlspecialchars($_POST['nom']);
+    //  $_POST['sexe'] = htmlspecialchars($_POST['sexe']);
+
+    $resultat = $pdoENT->prepare(
+    "UPDATE users SET 
+    upload_profile = :upload_profile,
+    nom = :nom, 
+    prenom = :prenom,
+    telephone = :telephone, 
+    adresse = :adresse, 
+    complement = :complement, 
+    code_postal = :code_postal, 
+    email = :email,
+    education = :education,
+    age = :age, 
+    disponibilite = :disponibilite,
+    upload_background  = :upload_background,
+    metier = :metier,
+    social = :social,
+    description_portfolio = :description_portfolio,
+    upload_portfolio = :upload_portfolio,
+    description_cv = :description_cv,
+    upload_cv = :upload_cv,
+    accroche_footer = accroche_footer,
+    
+    WHERE id_profile = :id_profile");
+
+    $resultat->execute( array(
+        ':upload_profile' => $_POST['up'],
+        ':nom' => $_POST['nom'],
+        ':prenom' => $_POST['prenom'], 
+        ':telephone' => $_POST['telephone'],
+        ':adresse' => $_POST['adresse'],
+        ':complement' => $_POST['complement'],
+        ':code_postal' => $_POST['code_postal'],
+        ':email' => $_POST['email'],
+        ':education' => $_POST['education'],
+        ':age' => $_POST['age'],
+        ':disponibilite' => $_POST['disponibilite'],
+        ':upload_background' => $_POST['upload_background'],
+        ':metier' => $_POST['metier'],
+        ':social' => $_POST['social'],
+        ':description_portfolio' => $_POST['description_portfolio'],
+        ':upload_portfolio' => $_POST['upload_portfolio'],
+        ':description_cv' => $_POST['description_cv'],
+        ':upload_cv' => $_POST['upload_cv'],
+        ':accroche_footer' => $_POST['accroche_footer'],
+        ':id_profile' => $_GET['id_profile'],
+    ));
+    header('location:index.php');
+    exit();
+}
+
+
+
+
+
+
+
+ $canal = $conn->prepare("INSERT INTO users (id_user, id_profile, id_level, username, email, password )
+      VALUES (:id_user, :id_profile, :id_level, :username, :email), :password");
+
+
+
+
+
+
+
+REVOIR LES INCLUDES DES CONNEXION !!!!!!
+REVOIR MESSAGE ERREUR BASE DE DONNEE QUI S'AFFICHE
