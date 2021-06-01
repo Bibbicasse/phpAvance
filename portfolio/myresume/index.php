@@ -39,8 +39,9 @@
 
             <div class="row">
                 <div class="col-12 col-lg-6 text-center bg-light" style="height: auto;">
-                    <img src="<?='/uploads/file_profile_' . $current_user ?>" onerror="this.onerror=null; this.src='/uploads/file_profile_0'" class="img-fluid " width="400" height="400" 
-                    alt="<?= $fiche['nom'] ?? '' ?> <?= $fiche['prenom'] ?? '' ?> - Profile">
+                
+                    <img src="<?='/uploads/file_profile_' . $current_user ?>" onerror="this.onerror=null; this.src='/uploads/file_profile_0'" class="img-fluid" width="50%" height: auto;
+                    alt="Salvatech - Photo Profile">
                 </div>
                 <div class=" col-12 col-lg-6 pt-4 pt-lg-2 mt-2 mt-lg-0 content bg-light">
                     <h3><?= $fiche['metier'] ?? '' ?></h3>

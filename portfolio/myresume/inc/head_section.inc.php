@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <title><?= $fiche['nom'] ?? 'Login/Inscription' ?> <?= $fiche['prenom'] ?? '' ?></title>
+  <title><?= $fiche['nom'] ?? 'Accueil' ?> <?= $fiche['prenom'] ?? '' ?></title>
 
   <!-- **********************************************-->
   <!--           META INCLUDE -->

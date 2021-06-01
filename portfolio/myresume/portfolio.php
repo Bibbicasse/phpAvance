@@ -44,7 +44,7 @@ require 'fiches/index_fiche.php';
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-editorVideo">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/camille_vignette.PNG" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/camille_vignette.PNG" class="img-fluid" alt="Salvatech - Portfolio">
             <div class="portfolio-info">
               <h4>Camille</h4>
               <p>Projet 2018</p>
@@ -57,7 +57,7 @@ require 'fiches/index_fiche.php';
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-infography">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/fast-food-japonais_vignette.PNG" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/fast-food-japonais_vignette.PNG" class="img-fluid" alt="Salvatech - Portfolio">
             <div class="portfolio-info">
               <h4>Fast-Food Japonais</h4>
               <p>Projet Baccalaureat 2016</p>
@@ -71,7 +71,7 @@ require 'fiches/index_fiche.php';
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-editorVideo">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/fauteuilEPS.PNG" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/fauteuilEPS.PNG" class="img-fluid" alt="Salvatech - Portfolio">
             <div class="portfolio-info">
               <h4>Acrobatie</h4>
               <p>EPS 2016</p>
@@ -85,7 +85,7 @@ require 'fiches/index_fiche.php';
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-infography">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/calendrier2015Recto.PNG" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/calendrier2015Recto.PNG" class="img-fluid" alt="Salvatech - Portfolio">
             <div class="portfolio-info">
               <h4>Calendrier 2015</h4>
               <p>Projet Interne</p>
@@ -99,7 +99,7 @@ require 'fiches/index_fiche.php';
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-editorVideo">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/burgernetti_vignette.PNG" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/burgernetti_vignette.PNG" class="img-fluid" alt="Salvatech - Portfolio">
             <div class="portfolio-info">
               <h4>Exercices</h4>
               <p>Septembre 2016</p>
@@ -130,7 +130,7 @@ require 'fiches/index_fiche.php';
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Salvatech - Portfolio">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <p>

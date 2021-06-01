@@ -9,38 +9,26 @@
 
              <!-- Methode 2 avec if -->
              <?php if ($fiche['facebook'] != '') { ?>
-                <a href="<?= $fiche['facebook'] ?? '' ?>" class="facebook" target="_blank">
-                    <i class="bi bi-facebook"></i>
-                </a>
-            <?php } ?>
-            <?php if ($fiche['twitter'] != '') { ?>
-                <a href="<?= $fiche['twitter'] ?? '' ?>" class="twitter" target="_blank">
-                    <i class="bi bi-twitter"></i>
-                </a>
-            <?php } ?>
-            <?php if ($fiche['instagram'] != '') { ?>
-                <a href="<?= $fiche['instagram'] ?? '' ?>" class="instagram" target="_blank">
-                    <i class="bi bi-instagram"></i>
-                </a>
-            <?php } ?>
-            <?php if ($fiche['linkedin'] != '') { ?>
-                <a href="<?= $fiche['linkedin'] ?? '' ?>" class="linkedin" target="_blank">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-            <?php } ?>
-            <?php if ($fiche['github'] != '') { ?>
-                <a href="<?= $fiche['github'] ?? '' ?>" class="github" target="_blank">
-                    <i class="bi bi-github"></i>
-                </a>
-            <?php } ?>
+                 <a href="<?= $fiche['facebook'] ?? '' ?>" class="twitter"><i class="bi bi-facebook"></i></a>
+             <?php } ?>
+
+             <?php if ($fiche['twitter'] != '') { ?>
+                 <a href="<?= $fiche['twitter'] ?? '' ?>" class="twitter"><i class="bi bi-twitter"></i></a>
+             <?php } ?>
+
+             <?php if ($fiche['instagram'] != '') { ?>
+                 <a href="<?= $fiche['instagram'] ?? '' ?>" class="twitter"><i class="bi bi-instagram"></i></a>
+             <?php } ?>
+             <?php if ($fiche['linkedin'] != '') { ?>
+                 <a href="<?= $fiche['linkedin'] ?? '' ?>" class="twitter"><i class="bi bi-linkedin"></i></a>
+             <?php } ?>
+             <?php if ($fiche['github'] != '') { ?>
+                 <a href="<?= $fiche['github'] ?? '' ?>" class="twitter"><i class="bi bi-github"></i></a>
+             <?php } ?>
 
          </div>
          <div class="copyright">
              &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
-         </div>
-         <div class="copyright">
-             <a href='/doc/CGU.pdf' target="_blank">- CGU</a>
-             <a href='/doc/MentionLegales.pdf' target="_blank"> / Mention légal -</a>
          </div>
          <div class="credits">
              <!-- All the links in the footer should remain intact. -->

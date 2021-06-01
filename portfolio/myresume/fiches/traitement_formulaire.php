@@ -41,22 +41,22 @@ if (isset($_POST['envoiContact'])) {
         /* ***********************************************/
         /*          Envoi mail depuis un serveur        */
         /* ***********************************************/
-        // mail($fiche['email'], '', $commentaire, $headers); 
+        mail($fiche['email'], '', $commentaire, $headers); 
 
         /* ***********************************************/
         /* Envoi mail depuis local */
         /* ***********************************************/
     
         // $file_name = 'localisation/'. $current_user = $_SESSION['id_user'] . '_' . time() . '.txt';
-        $file_name = 'mail/' . $current_user . '_' . time() . '.txt'; //
-        $file_content =
-            'Nom : ' . $nom .
-            "\nPrénom : " . $prenom .
-            "\nEmail : " . $email .
-            "\nTéléphone : " . $telephone .
-            "\nCommentaire : " . $commentaire;
+        // $file_name = 'mail/' . $current_user . '_' . time() . '.txt'; //
+        // $file_content =
+        //     'Nom : ' . $nom .
+        //     "\nPrénom : " . $prenom .
+        //     "\nEmail : " . $email .
+        //     "\nTéléphone : " . $telephone .
+        //     "\nCommentaire : " . $commentaire;
 
-        file_put_contents($file_name, $file_content);
+        // file_put_contents($file_name, $file_content);
     } else {
         $message = '*Champs obligatoire'; //a définir à l'endroit voulu avec CSS
     }

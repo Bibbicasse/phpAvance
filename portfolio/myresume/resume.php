@@ -31,11 +31,13 @@ require 'fiches/fiches.php';
       <div class="row" data-aos="fade-up" data-aos-delay="200">
         <div class="col-md-6 col-lg-4 mx-auto portfolio-item">
           <div class="portfolio-wrap">
-          <img src="<?= 'uploads/vignette_cv_' . $current_user ?>" onerror="this.onerror=null; this.src='uploads/image_pdf_0'" class="img-fluid" alt="">
-            <div class="portfolio-info">
+          <img src="<?= 'uploads/vignette_cv_' . $current_user ?>" 
+              onerror="this.onerror=null; this.src='uploads/image_pdf_0.png'" class="img-fluid" alt="Salvatech - CV">
+            
+              <div class="portfolio-info">
               <h4><?= $fiche['titre_cv'] ?? 'Curiculum Vitae' ?></h4>
               <div class="portfolio-links">
-                <a href="<?= 'uploads/file_CV_' . $current_user ?>" class="portfolio-details-lightbox" data-glightbox="type: external" title="Voir">
+                <a href="<?= 'uploads/file_CV_' . $current_user ?>" onerror="this.onerror=null; this.src='uploads/image_pdf_0.png'" class="portfolio-details-lightbox" data-glightbox="type: external" title="Voir">
                   <i class="bx bx-link"></i>
                 </a>
               </div>
@@ -45,7 +47,7 @@ require 'fiches/fiches.php';
       </div><!-- End gallery resume -->
 
       <div class="col-lg-4 mx-auto">
-        <a class="btn btn-success d-block " href="<?= 'uploads/file_CV_' . $current_user ?> " role="button" download="Télécharger fichier">Télécharger CV</a>
+        <a class="btn btn-success d-block " href="<?= '/uploads/file_CV_' . $current_user ?> " role="button" download="Télécharger fichier">Télécharger CV</a>
       </div>
     </div> <!-- End gallery container resume -->
 

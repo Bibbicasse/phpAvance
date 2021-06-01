@@ -36,7 +36,6 @@
           <a href="/login.php" class="nav-link scrollto">
             <i class="bi bi-box-arrow-right"></i>
             <span>Connexion</span>
-
           </a>
         </li>
       <?php } else { ?>

@@ -134,17 +134,15 @@ require 'fiches/modifier_fiche.php';
                                                     value="<?= $fiche['metier'] ?? '' ?>">
                                                 </div>
                                                 <hr>
-                                                
-
                                             </form>
                                         </div>
 
                                         <br>
                                         <!-- <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div> -->
                                     </div>
-                                    <div class="p-3 py-0 mb-2">
+                                    <div class="p-3 py-0 mb-2 was-validated">
                                         <div class="d-flex justify-content-between align-items-center experience">
-                                            <label class="mx-auto text-center justify-content-between align-items-center my-3">Réseaux Sociaux</label>>
+                                            <label class="mx-auto text-center justify-content-between align-items-center my-3">Réseaux Sociaux</label>
                                         </div>
                                         <div class="col-md-12">
                                             <label class="labels">Website</label>
@@ -229,7 +227,7 @@ require 'fiches/modifier_fiche.php';
                                             <div class="mx-auto text-center justify-content-between align-items-center mb-3">
                                                 <h4 class="">Curiculum Vitae</h4>
                                             </div>
-                                            <div class="row mt-2">
+                                            <div class="row mt-2 was-validated">
                                                 <div class="form-group col-sm-12 col-lg-6">
                                                     <div>
                                                         <label class="labels">Nom du CV</label>
@@ -239,14 +237,14 @@ require 'fiches/modifier_fiche.php';
                                                         <input name="description_cv" type="text" class="form-control" placeholder="Description" value="<?= $fiche['description_cv'] ?? '' ?>">
                                                     </div>
                                                 </div>
-                                                <div class="form-group col-sm-12 col-lg-6">
+                                                <div class="form-group col-sm-12 col-lg-6 ">
                                                     <div>
                                                         <label class="labels">CV</label><br>
-                                                        <input type="file" name="file_CV" class="form-control">
+                                                        <input type="file" name="file_CV" class="form-control" required>
                                                     </div>
                                                     <div>
                                                         <label class="labels">Vignette</label><br>
-                                                        <input type="file" name="vignette_cv" class="form-control">
+                                                        <input type="file" name="vignette_cv" class="form-control" required>
                                                         <small class=""><em><a href="https://www.ilovepdf.com/fr/pdf_en_jpg" target="_blank">Convertir PDF en JPG</a></em></small>
                                                     </div>
                                                 </div>
@@ -318,26 +316,24 @@ require 'fiches/modifier_fiche.php';
                     <!-- **********************************************-->
                     <!--       PARAMETRE ASIDE GAUCHE PROFILE          -->
                     <!-- **********************************************-->
-                    <div class="col-sm-10 col-lg-5 mt-2 mx-auto ">
+                    <div class="col-sm-10 col-lg-5 mt-2 mx-auto was-validated">
                         <div class="d-flex flex-column align-items-center text-center 2">
                             <!-- **********************************************-->
                             <!--               IMG PROFILE -->
                             <!-- **********************************************-->
-                            <img class="rounded-circle mt-5 img-circle" width="150" height="150" src="<?= '/uploads/file_profile_' . $current_user ?>" onerror="this.onerror=null; this.src='/uploads/file_profile_0'" alt="Profile - Photo">
+                            <img class="rounded-circle mt-5 img-circle" width="150" height="150" src="<?= '/uploads/file_profile_' . $current_user ?>" onerror="this.onerror=null; this.src='/uploads/file_profile_0'" alt="Salvatech - Photo Profile">
                             <span class="font-weight-bold"><?= $fiche['nom'] ?> <?= $fiche['prenom'] ?></span>
                             <span class="text-black-50"><?= $fiche['email'] ?></span>
                             <div class="col-12">
                                 <label class="labels">Photo Arrière Plan</label>
                                 <div class="form-group col-sm-12 mb-3">
-                                    <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
-                                    <input type="file" name="file_bg" class="form-control">
+                                    <input type="file" name="file_bg" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <label class="labels">Photo profile</label>
                                 <div class="from-group col-sm-12 mb-3">
-                                    <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
-                                    <input type="file" name="file_profile" class="form-control">
+                                    <input type="file" name="file_profile" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -347,7 +343,7 @@ require 'fiches/modifier_fiche.php';
                     <!-- **********************************************-->
                     <!--           PARAMETRE PROFILE                   -->
                     <!-- **********************************************-->
-                    <div class="col-sm-10 col-lg-5 mt-2 mx-auto was-validated ">
+                    <div class="col-sm-10 col-lg-5 mt-2 mx-auto was-validated">
                         <div class="p-3 py-2">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="mx-auto text-center justify-content-between align-items-center mb-3">Profile</h4>
