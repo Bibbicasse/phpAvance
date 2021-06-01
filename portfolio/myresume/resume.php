@@ -47,7 +47,8 @@ require 'fiches/fiches.php';
       </div><!-- End gallery resume -->
 
       <div class="col-lg-4 mx-auto">
-        <a class="btn btn-success d-block " href="<?= '/uploads/file_CV_' . $current_user ?> " role="button" download="Télécharger fichier">Télécharger CV</a>
+        <a class="btn btn-success d-block " href="<?= 'uploads/file_CV_' . $fiche['nom'].'_'.$fiche['prenom'] .'.pdf'?>" 
+        role="button" download>Télécharger CV</a>
       </div>
     </div> <!-- End gallery container resume -->
 
