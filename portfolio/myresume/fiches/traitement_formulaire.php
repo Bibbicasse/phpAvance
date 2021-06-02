@@ -31,7 +31,7 @@ if (isset($_POST['envoiContact'])) {
 
             //formatage standard, à respecter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'From:contact@psalvatech.fr <portfolio>' . "\r\n" . //une adresse fictive pour l'envoi auto
+        $headers .= 'From:postmaster@salvatech.fr <portfolio>' . "\r\n" . //une adresse fictive pour l'envoi auto
             'Reply-To:' . $email . "\r\n" . // pour le bouton répondre à
             'Content-Type: text/plain; charset="utf-8"; DelSp="Yes"; format=flowed ' . "\r\n" .
             'Content-Disposition: inline' . "\r\n" .
