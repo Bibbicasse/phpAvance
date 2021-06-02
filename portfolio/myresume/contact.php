@@ -57,19 +57,19 @@ require 'fiches/traitement_formulaire.php';
         <div class="col-lg-8 mt-5 mt-lg-0">
           <form method="post" class="php-email-form">
             <div class="row">
-              <div class="col-6 form-group">
+              <div class="col-12 col-lg-6 form-group">
                 <!-- <label valign="top" for=" prenom">nom *</label> -->
                 <input type="text" name="nom" class="form-control" placeholder="Ton nom :" value="">
               </div>
-              <div class="col-6 form-group">
+              <div class="col-12 col-lg-6 form-group">
                 <!-- <label valign="top" for=" prenom">Prénom *</label> -->
                 <input type="text" name="prenom" class="form-control" placeholder="Ton prénom :" value="">
               </div>
-              <div class="col-8 form-group">
+              <div class="col-12 col-lg-8 form-group">
                 <!-- <label for="email">Email Addresse *</label> -->
                 <input type="text" name="email" class="form-control" placeholder="Ton email :" value="">
               </div>
-              <div class="col-4 form-group">
+              <div class="col-12 col-lg-4 form-group">
                 <!-- <label for="telephone">Téléphone</label> -->
                 <input type="text" name="telephone" class="form-control" placeholder="Ton téléphone :" value="">
               </div>
@@ -77,9 +77,9 @@ require 'fiches/traitement_formulaire.php';
                 <!-- <label for="commentaire">Commentaire *</label> -->
                 <textarea class="form-control" rows="5" name="commentaire"></textarea>
               </div>
-              <div class="text-center col-3 mx-auto">
+              <div class="text-center col-12 col-lg-3 mx-auto">
                 <!-- <button type="submit">Envoyer</button> -->
-                <button class="btn btn-outline-info d-block text-center" name="envoiContact" type="submit">Envoyer</button>
+                <button class="btn btn-outline-info d-block text-center mx-auto" name="envoiContact" type="submit">Envoyer</button>
                 <p class="alert-success text-center"> <?= $messageEmailOK ?? '' ?></p>
                 <p class="alert-danger text-center"> <?= $messageEmailKO ?? '' ?></p>
               </div>

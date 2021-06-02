@@ -13,7 +13,7 @@ require 'fiches/modifier_fiche.php';
 
 
 <!-- ======= Header ======= -->
-<header id="header" class="d-flex flex-column justify-content-center">
+<header class="headerPerso" class="d-flex flex-column justify-content-center">
     <?php
     require 'inc/nav.inc.php';
     ?>
@@ -27,7 +27,7 @@ require 'fiches/modifier_fiche.php';
     <div class="container rounded-3 bg-white pt-5 mt-5 mb-5">
         <div class="row">
             <div class="col-12">
-                <h2 id="h2accueil" class=" text-center mx-auto">GESTIONNAIRE PROFILE</h2>
+                <h2 id="h2accueil" class=" text-center mx-auto">Dashbords Membre</h2>
             </div>
         </div>
 
@@ -57,20 +57,50 @@ require 'fiches/modifier_fiche.php';
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-12 mx-auto">
+                                                <p class="text-center">Indices de valeurs</p>
+                                            </div>
+                                            <div class="text-center row">
+                                                <div class="col-12 col-lg-2 badge rounded bg-primary">
+                                                    <span class="">Niveaux</span>
+                                                </div>
+                                                <div class="col-12 col-lg-2">
+                                                    <span class="badge rounded-pill bg-dark">Junior</span>
+                                                    <span>0 - 20%</span>
+                                                </div>
+                                                <div class="col-12 col-lg-2">
+                                                    <span class="badge rounded-pill bg-danger">Débrouillard</span>
+                                                    <span>20% - 40%</span>
+                                                </div>
+                                                <div class="col-12 col-lg-2">
+                                                    <span class="badge rounded-pill bg-info">Normal</span>
+                                                    <span>40% - 60%</span>
+                                                </div>
+                                                <div class="col-12 col-lg-2">
+                                                    <span class="badge rounded-pill bg-warning">Boss</span>
+                                                    <span>60% - 80%</span>
+                                                </div>
+                                                <div class="col-12 col-lg-2">
+                                                    <span class="badge rounded-pill bg-success">Légende</span>
+                                                    <span>80% - 100%</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <?php foreach ($competences as $competence) { ?>
                                             <div class="row mt-2 mx-auto col-12">
-                                                <div class="col-9">
+                                                <div class="col-12 col-lg-9">
                                                     <!-- <label class="labels">Description Competence</label> -->
                                                     <input name="competences[<?= $competence['id_competence'] ?>]" type="text" class="form-control" placeholder="Description" value="<?= $competence['competence'] ?>">
                                                 </div>
-                                                <div class="col-1">
-                                                    <input name="valeurs[<?= $competence['id_competence'] ?>]" type="number" class="form-control" placeholder="valeur" value="<?= $competence['valeur'] ?>">
+                                                <div class="col-4 col-lg-1">
+                                                    <input name="valeurs[<?= $competence['id_competence'] ?>]" type="number" class="form-control" placeholder="%" value="<?= $competence['valeur'] ?>">
                                                 </div>
-                                                <div class=" col-1 mx-0">
+                                                <div class=" col-4 col-lg-1 mx-0">
                                                     <!-- <label class="labels">Couleur</label> -->
-                                                    <input name="couleurs[<?= $competence['id_competence'] ?>]" type="color" id="colorSkills" name="colorSkills" class="form-control form-control-color" value="<?= $competence['couleur'] ?>">
+                                                    <input name="couleurs[<?= $competence['id_competence'] ?>]" type="color" id="colorSkills" name="colorSkills" class="form-control form-control-color" value="<?= $competence['couleur']?>" >
                                                 </div>
-                                                <div class="col-sm-1 mx-auto">
+                                                <div class="col-4 col-lg-1 mx-auto">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dash-square" viewBox="0 0 16 16" onclick="competence_remove(this)">
                                                         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                                                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
@@ -78,6 +108,7 @@ require 'fiches/modifier_fiche.php';
                                                 </div>
                                             </div>
                                         <?php } ?>
+                                        
                                     </div> <!-- fin compétence -->
                                     <div class="row p-2">
                                         <!-- **********************************************-->
@@ -91,13 +122,13 @@ require 'fiches/modifier_fiche.php';
 
                                     </div><!-- Fin row bouton -->
                                 </div><!-- fin row compétence-->
-                            </section>
+                            </section><!-- Section compétence-->
                         </form>
                     </div>
                 </div>
             </div>
 
-            <button class="btn btn-primary col-6 my-1 mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#ex_pro" aria-expanded="false" aria-controls="ex_pro">Socials et Réseaux</button>
+            <button class="btn btn-primary col-6 my-1 mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#ex_pro" aria-expanded="false" aria-controls="ex_pro">Réseaux et Social </button>
             <div class="col-12">
                 <div class="collapse multi-collapse" id="ex_pro">
                     <div class="card card-body">
@@ -113,8 +144,6 @@ require 'fiches/modifier_fiche.php';
                                                 <div class="col-sm-11">
                                                     <h4 style="display:block">Professionnel</h4>
                                                 </div>
-                                                <!-- <label class="labels">Compétence +</label><br> -->
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -125,21 +154,13 @@ require 'fiches/modifier_fiche.php';
                                                     <label class="mx-auto text-center justify-content-between align-items-center my-3">Experience professionnel</label>
                                                 </div>
                                                 <div class="col-6 mx-auto">
-                                                    <label class="labels mx" >Métier</label>
-                                                    <input 
-                                                    name="metier" 
-                                                    type="text" 
-                                                    class="form-control" 
-                                                    placeholder="Votre poste" 
-                                                    value="<?= $fiche['metier'] ?? '' ?>">
+                                                    <label class="labels mx">Métier</label>
+                                                    <input name="metier" type="text" class="form-control" placeholder="Votre poste" value="<?= $fiche['metier'] ?? '' ?>">
                                                 </div>
                                                 <hr>
                                             </form>
-                                        </div>
-
-                                        <br>
-                                        <!-- <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div> -->
-                                    </div>
+                                        </div> 
+                                    </div> <!-- Fin  experience -->
                                     <div class="p-3 py-0 mb-2 was-validated">
                                         <div class="d-flex justify-content-between align-items-center experience">
                                             <label class="mx-auto text-center justify-content-between align-items-center my-3">Réseaux Sociaux</label>
@@ -168,7 +189,7 @@ require 'fiches/modifier_fiche.php';
                                             <label class="labels">Github</label>
                                             <input name="github" type="text" class="form-control" placeholder="Lien" value="<?= $fiche['github'] ?? '' ?>">
                                         </div>
-                                    </div><!-- fin Section Social -->
+                                    </div><!-- fin  Social -->
                                 </div>
                                 <div class="row p-2">
                                     <!-- **********************************************-->
@@ -182,7 +203,7 @@ require 'fiches/modifier_fiche.php';
                                     <p class="alert-danger text-center"> <?= $messageKO ?? '' ?> </p>
                                     <p class="alert-success text-center"> <?= $messageOK ?? '' ?> </p>
                                 </div><!-- Fin row bouton -->
-                            </section>
+                            </section>  <!-- Fin Section experience et social -->
                         </form>
                     </div>
                 </div>
@@ -195,10 +216,10 @@ require 'fiches/modifier_fiche.php';
                         <form action="" method="POST" enctype="multipart/form-data">
                             <section id="modifier" class="p-0">
                                 <!-- <div class="row m-2">-->
-                                    <!-- **********************************************-->
-                                    <!--           PARAMETRE PORTFOLIO               -->
-                                    <!-- **********************************************-->
-                                    <!-- <div class="col-sm-12 mx-auto">
+                                <!-- **********************************************-->
+                                <!--           PARAMETRE PORTFOLIO               -->
+                                <!-- **********************************************-->
+                                <!-- <div class="col-sm-12 mx-auto">
                                         <div class="p-3 py-0  mb-2">
                                             <div class="mx-auto text-center justify-content-between align-items-center mb-3">
                                                 <h4 class="">Portfolio</h4>
@@ -215,8 +236,10 @@ require 'fiches/modifier_fiche.php';
                                                 </div>
                                             </div>
                                         </div> -->
-                                   <!--  </div>--> <!-- fin portfolio -->
-                               <!-- </div>--> <!-- fin ROW PORTFOLIO-->
+                                <!--  </div>-->
+                                <!-- fin portfolio -->
+                                <!-- </div>-->
+                                <!-- fin ROW PORTFOLIO-->
                                 <!-- <hr> -->
                                 <div class="row m-2">
                                     <!-- **********************************************-->
@@ -278,36 +301,38 @@ require 'fiches/modifier_fiche.php';
                                 <section id="modifier">
                                     <div class="row m-2">
                                         < !-- **********************************************-->
-                                        <!--           PARAMETRE Mot de passe               -->
-                                        <!-- **********************************************-->
-                                        <!-- <div class="col-sm-12 mx-auto"> -->
-                                            <!-- <div> -->
-                                                <!-- <div class="mx-auto text-center justify-content-between align-items-center mb-3"> -->
-                                                    <!-- <h4 class="text-right">Mot de passe</h4> -->
-                                                <!-- </div> -->
-                                                <!-- <div class="row mt-2"> -->
-                                                    <!-- <a href="reset_mdp.php">Changer mot de passe</a> -->
-                                                <!-- </div> -->
-                                            <!-- </div> -->
-                                        <!--</div>--> <!-- fin mot de passe -->
-                                    <!-- </div> --> <!-- fin ROW mot de passe-->
-                                <!-- </section> -->
-                                <!-- <div class="row p-2"> -->
-                                    <!-- **********************************************-->
-                                    <!-- BUTTON SUBMIT AVEC UPDATE VERS BDD -->
-                                    <!-- **********************************************-->
-                                    <!-- <div class="my-5 text-center"> -->
-                                        <!-- <input type="hidden" name="id_user" value="<?= $fiche['id_user'] ?? 0 ?>"> -->
-                                        <!-- <input class="btn btn-outline-success" name="BTNsubmit" type="submitMDP" value="Modifier mot de passe"> -->
-                                        <!-- <br> -->
-                                    <!--</div>fin boutons-->
-                                    <!-- <p class="alert-danger text-center"> < ?= $messageKO ?? '' ?> </p> -->
-                                    <!-- <p class="alert-success text-center"> < ?= $messageOK ?? '' ?> </p> -->
-                                <!--</div>Fin row bouton-->
-                            <!--  </form> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-             <!-- </div> -->
+            <!--           PARAMETRE Mot de passe               -->
+            <!-- **********************************************-->
+            <!-- <div class="col-sm-12 mx-auto"> -->
+            <!-- <div> -->
+            <!-- <div class="mx-auto text-center justify-content-between align-items-center mb-3"> -->
+            <!-- <h4 class="text-right">Mot de passe</h4> -->
+            <!-- </div> -->
+            <!-- <div class="row mt-2"> -->
+            <!-- <a href="reset_mdp.php">Changer mot de passe</a> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!--</div>-->
+            <!-- fin mot de passe -->
+            <!-- </div> -->
+            <!-- fin ROW mot de passe-->
+            <!-- </section> -->
+            <!-- <div class="row p-2"> -->
+            <!-- **********************************************-->
+            <!-- BUTTON SUBMIT AVEC UPDATE VERS BDD -->
+            <!-- **********************************************-->
+            <!-- <div class="my-5 text-center"> -->
+            <!-- <input type="hidden" name="id_user" value="<?= $fiche['id_user'] ?? 0 ?>"> -->
+            <!-- <input class="btn btn-outline-success" name="BTNsubmit" type="submitMDP" value="Modifier mot de passe"> -->
+            <!-- <br> -->
+            <!--</div>fin boutons-->
+            <!-- <p class="alert-danger text-center"> < ?= $messageKO ?? '' ?> </p> -->
+            <!-- <p class="alert-success text-center"> < ?= $messageOK ?? '' ?> </p> -->
+            <!--</div>Fin row bouton-->
+            <!--  </form> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- </div> -->
         </div> <!-- Fin de row collapse-->
         <form action="" method="POST" enctype="multipart/form-data">
             <section id="modifier">

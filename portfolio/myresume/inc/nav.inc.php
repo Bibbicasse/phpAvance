@@ -1,15 +1,27 @@
 <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  
+<!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
 <!-- ======= Header ======= -->
-<header id="header" class="d-flex flex-column justify-content-center">
+<header class="headerPerso" class="d-flex flex-column justify-content-center">
   <nav id="navbar" class="navbar nav-menu">
     <ul>
-      <li><a href="/index.php?id=<?= $fiche['id_user'] ?? '' ?>" class="nav-link scrollto">
-          <i class="bi bi-house"></i>
-          <span>Accueil</span></a>
-      </li>
+
+      <?php if (isset($_SESSION['id_user'])) { ?>
+        <li>
+          <a href="/index.php?id=<?= $_SESSION['id_user'] ?? '' ?>" class="nav-link scrollto">
+            <i class="bi bi-person-square"></i>
+            <span>Ma page</span>
+          </a>
+        </li>
+      <?php } else { ?>
+        <li>
+          <a href="/index.php?id=<?= $fiche['id_user'] ?? '' ?>" class="nav-link scrollto">
+            <i class="bi bi-house"></i>
+            <span>Accueil</span>
+          </a>
+        </li> 
+      <?php } ?>
       <li><a href="/index.php?id=<?= $fiche['id_user'] ?? '' ?>#about" class="nav-link scrollto">
           <i class="bi bi-person-lines-fill"></i>
           <span>A propos</span></a>
@@ -18,10 +30,10 @@
           <i class="bi bi-sliders"></i>
           <span>Compétences</span></a>
       </li>
-      <!-- <li><a href="/portfolio.php?id=< ?= $fiche['id_user'] ?? '' ?>#portfolio" class="nav-link scrollto">
+      <li><a href="/portfolio.php?id=<?= $fiche['id_user'] ?? '' ?>#portfolio" class="nav-link scrollto">
           <i class="bi bi-folder2-open"></i>
           <span>Portfolio</span></a>
-      </li> -->
+      </li>
       <li><a href="/resume.php?id=<?= $fiche['id_user'] ?? '' ?>#resume" class="nav-link scrollto">
           <i class="bi bi-file-earmark-person"></i>
           <span>CV</span></a>

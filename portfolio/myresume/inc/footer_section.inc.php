@@ -40,7 +40,7 @@
          </div>
          <div class="copyright">
              <a href='/doc/CGU.pdf' target="_blank">- CGU</a>
-             <a href='/doc/MentionLegales.pdf' target="_blank"> / Mention légal -</a>
+             <a href='/doc/MentionLegales.pdf' target="_blank"> / Mentions légales -</a>
          </div>
          <div class="credits">
              <!-- All the links in the footer should remain intact. -->
@@ -49,7 +49,7 @@
              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
              <br>
-             Adapter par Salvatore Giovinetti</a>
+             Adapté par Salvatore Giovinetti</a>
          </div>
      </div>
  </footer><!-- End Footer -->

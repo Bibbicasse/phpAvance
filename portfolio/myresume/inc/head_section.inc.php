@@ -9,6 +9,7 @@
   <!-- **********************************************-->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="robots" content="noindex" /> <!-- No robot follow all -->
 
   <!-- ***********************************************************************************************-->
   <!-- la description indispensable pour les moteurs de recherche et qui s'affiche dans les résultats -->
@@ -22,7 +23,8 @@
   <!-- **********************************************-->
   <!--                 Favicons                      -->
   <!-- **********************************************-->
-  <link href="/assets/img/favicon.png" rel="icon" >
+  <!--<link href="/assets/img/favicon.png" rel="icon" >--> 
+  <link href="../uploads/icon/favicon-32x32.ico" rel="icon" >
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- **********************************************-->

@@ -16,7 +16,12 @@ if ($conn = db_connexion()) { //si la connexion à bien fonctionné
     // set the PDO error mode to exception
 
 
-    $resultat = $conn->prepare("SELECT * FROM competences WHERE id_user = :id_user");
+    $resultat = $conn->prepare(
+        "SELECT * 
+        FROM competences 
+        WHERE id_user = :id_user
+        ORDER BY valeur DESC
+        ");
     $resultat->execute(array(
         // (int) = cast -> sécurité pour évité les injections depuis le get, si bétise écrite, la valeur sera 0
         ':id_user' => $current_user
