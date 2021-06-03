@@ -40,6 +40,7 @@ if ($conn = db_connexion()) { //si la connexion à bien fonctionné
 
 
     require 'fiches/fiches.php';
+    
 } else {
     $message = 'Erreur de connexion';
 }

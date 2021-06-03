@@ -27,7 +27,7 @@ require 'fiches/modifier_fiche.php';
     <div class="container rounded-3 bg-white pt-5 mt-5 mb-5">
         <div class="row">
             <div class="col-12">
-                <h2 id="h2accueil" class=" text-center mx-auto">Dashbords Membre</h2>
+                <h2 id="h2accueil" class=" text-center mx-auto">Dashbord</h2>
             </div>
         </div>
 
@@ -257,7 +257,8 @@ require 'fiches/modifier_fiche.php';
                                                         <input name="titre_cv" type="text" class="form-control" placeholder="Nom de ton CV" value="<?= $fiche['titre_cv'] ?? 'Curiculum Vitae' ?>"> <!-- le sinon ne fonctionne pas -->
 
                                                         <label class="labels">Description</label>
-                                                        <input name="description_cv" type="text" class="form-control" placeholder="Description" value="<?= $fiche['description_cv'] ?? '' ?>">
+                                                        <input name="description_cv" type="text" class="form-control" placeholder="Description" 
+                                                        value="<?= $fiche['description_cv'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-sm-12 col-lg-6 ">

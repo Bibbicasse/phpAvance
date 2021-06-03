@@ -50,7 +50,8 @@ require 'fiches/index_fiche.php';
                             <li>
                                 <i class="bi bi-chevron-right"></i>
                                 <strong>Website:</strong>
-                                <a href="<?= $fiche['website'] ?: '#'?>" class="col-12 w-100" target="_blank"> <?= $fiche['website'] ?: '(Non renseigné)' ?></a>
+                                <a href="<?= $fiche['website'] ?: '#'?>" class="col-12 w-100" target="_blank"> 
+                                <?= $fiche['website'] ?: '(Non renseigné)' ?></a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
